@@ -54,6 +54,7 @@ namespace Microsoft.Identity.Core
         public const string InvalidAuthority = "invalid_authority";
 
         public const string AccessingWsMetadataExchangeFailed = "accessing_ws_metadata_exchange_failed";
+        public const string FederatedServiceReturnedError = "federated_service_returned_error";
 
 #if ANDROID
         public const string FailedToCreateSharedPreference = "shared_preference_creation_failed";
