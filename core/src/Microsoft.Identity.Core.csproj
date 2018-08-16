@@ -62,10 +62,15 @@
     <EmbeddedResource Include="Properties\Microsoft.Identity.Core.rd.xml" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.1' or '$(TargetFramework)' == 'netstandard1.3' or '$(TargetFramework)' == 'uap10.0' or '$(TargetFramework)' == 'netcoreapp1.0'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.1' or '$(TargetFramework)' == 'netstandard1.3' or '$(TargetFramework)' == 'netcoreapp1.0'">
     <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
     <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
     <PackageReference Include="System.Xml.XDocument" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
+    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.1.1" />
+    <PackageReference Include="System.Runtime.Serialization.Json" Version="4.0.3" />
+    <PackageReference Include="System.Xml.XDocument" Version="4.0.1" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <Reference Include="System" />
