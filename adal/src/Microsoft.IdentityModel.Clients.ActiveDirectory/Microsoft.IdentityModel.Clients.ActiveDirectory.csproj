@@ -101,7 +101,7 @@
     <Compile Include="Features\WinCommon\**\*.cs" />
     <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.1.1" />
     <PackageReference Include="System.Runtime.Serialization.Json" Version="4.0.3" />
-    <PackageReference Include="System.Xml.XDocument" Version="4.0.1" />
+    <PackageReference Include="System.Xml.XDocument" Version="4.0.11" />
     <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'Xamarin.iOS10' ">
