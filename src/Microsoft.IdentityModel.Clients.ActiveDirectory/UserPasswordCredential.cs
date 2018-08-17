@@ -48,35 +48,10 @@ namespace Microsoft.IdentityModel.Clients.ActiveDirectory
             this.Password = password;
         }
 
-        /// <summary>
-        /// Constructor to create credential with username and password
-        /// </summary>
-        /// <param name="userName">Identifier of the user application requests token on behalf.</param>
-        /// <param name="securePassword">User password.</param>
-        public UserPasswordCredential(string userName, SecureString securePassword) : base(userName, UserAuthType.UsernamePassword)
-        {
-            this.SecurePassword = securePassword;
-        }
-
-        internal SecureString SecurePassword { get; private set; }
-
         internal string Password { get; }
 
         internal override char[] PasswordToCharArray()
         {
-            if (SecurePassword != null)
-            {
-                var output = new char[SecurePassword.Length];
-                IntPtr secureStringPtr = Marshal.SecureStringToCoTaskMemUnicode(SecurePassword);
-                for (int i = 0; i < SecurePassword.Length; i++)
-                {
-                    output[i] = (char)Marshal.ReadInt16(secureStringPtr, i * 2);
-                }
-
-                Marshal.ZeroFreeCoTaskMemUnicode(secureStringPtr);
-                return output;
-            }
-
             return (this.Password != null) ? this.Password.ToCharArray() : null;
         }
 
